@@ -9,17 +9,17 @@ using WebApplication2.Data;
 
 #nullable disable
 
-namespace WebApplication2.Data.Migrations
+namespace WebApplication2.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20220831090311_increate")]
-    partial class increate
+    [Migration("20220901030452_recreatebb")]
+    partial class recreatebb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "6.0.7")
+                .HasAnnotation("ProductVersion", "6.0.8")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
@@ -234,7 +234,7 @@ namespace WebApplication2.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("CartLineID"), 1L, 1);
 
-                    b.Property<int?>("OrdersOrderID")
+                    b.Property<int?>("OrderID")
                         .HasColumnType("int");
 
                     b.Property<int>("ProductID")
@@ -245,14 +245,14 @@ namespace WebApplication2.Data.Migrations
 
                     b.HasKey("CartLineID");
 
-                    b.HasIndex("OrdersOrderID");
+                    b.HasIndex("OrderID");
 
                     b.HasIndex("ProductID");
 
                     b.ToTable("CartLine");
                 });
 
-            modelBuilder.Entity("WebApplication2.Models.Orders", b =>
+            modelBuilder.Entity("WebApplication2.Models.Order", b =>
                 {
                     b.Property<int>("OrderID")
                         .ValueGeneratedOnAdd()
@@ -264,9 +264,16 @@ namespace WebApplication2.Data.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Line1")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("Shipped")
+                        .HasColumnType("bit");
 
                     b.HasKey("OrderID");
 
@@ -354,9 +361,9 @@ namespace WebApplication2.Data.Migrations
 
             modelBuilder.Entity("WebApplication2.Models.CartLine", b =>
                 {
-                    b.HasOne("WebApplication2.Models.Orders", null)
+                    b.HasOne("WebApplication2.Models.Order", null)
                         .WithMany("Lines")
-                        .HasForeignKey("OrdersOrderID");
+                        .HasForeignKey("OrderID");
 
                     b.HasOne("WebApplication2.Models.Product", "Product")
                         .WithMany()
@@ -367,7 +374,7 @@ namespace WebApplication2.Data.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("WebApplication2.Models.Orders", b =>
+            modelBuilder.Entity("WebApplication2.Models.Order", b =>
                 {
                     b.Navigation("Lines");
                 });

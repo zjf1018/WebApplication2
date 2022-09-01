@@ -5,8 +5,8 @@ namespace WebApplication2.Models
 {
     public class Order
     {
-        [BindNever]
         [Key]
+        [BindNever] 
         public int OrderID { get; set; }
 
         [BindNever]
@@ -20,9 +20,8 @@ namespace WebApplication2.Models
 
         public string Description { get; set; }
 
-        [Required(ErrorMessage = "Please enter the first address line")]
+        [Required(ErrorMessage = "Please enter the address")]
         public string Line1 { get; set; }
-
 
 
     }
