@@ -90,3 +90,10 @@ C:\Users\Jingfeng\source\repos\WebApplication2\WebApplication2\bin\Debug\net6.0\
 C:\Users\Jingfeng\source\repos\WebApplication2\WebApplication2\bin\Debug\net6.0\runtimes\win-arm64\native\e_sqlite3.dll
 C:\Users\Jingfeng\source\repos\WebApplication2\WebApplication2\bin\Debug\net6.0\runtimes\win-x64\native\e_sqlite3.dll
 C:\Users\Jingfeng\source\repos\WebApplication2\WebApplication2\bin\Debug\net6.0\runtimes\win-x86\native\e_sqlite3.dll
+C:\Users\Jingfeng\source\repos\WebApplication2\WebApplication2\bin\Debug\net6.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\Jingfeng\source\repos\WebApplication2\WebApplication2\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\Jingfeng\source\repos\WebApplication2\WebApplication2\bin\Debug\net6.0\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\Jingfeng\source\repos\WebApplication2\WebApplication2\bin\Debug\net6.0\Microsoft.CodeAnalysis.dll
+C:\Users\Jingfeng\source\repos\WebApplication2\WebApplication2\bin\Debug\net6.0\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Jingfeng\source\repos\WebApplication2\WebApplication2\bin\Debug\net6.0\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\Jingfeng\source\repos\WebApplication2\WebApplication2\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll

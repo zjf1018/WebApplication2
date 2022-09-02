@@ -34,6 +34,7 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Order" asp-action="List">Confirm</a>
                         </li>
+                         
                     </ul>
                     <partial name="_LoginPartial" />
                 </div>
@@ -43,10 +44,22 @@
             </div>
         </nav>
     </header>
+
+
+         <nav class="navbar navbar-inverse bg-info justify-content-between">
+        <div class="float-right">
+            @await Component.InvokeAsync("CartSummary")
+        </div>
+    </nav>
     <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+        <div class="row">
+            <div class="col col-md-3">
+                @await Component.InvokeAsync("NavigationMenu")
+            </div>
+            <div class="col col-md-9">
+                @RenderBody()
+            </div>
+        </div>
     </div>
 
     <footer class="border-top footer text-muted">
